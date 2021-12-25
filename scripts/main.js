@@ -15,7 +15,7 @@ class segment {
     this.parent.appendChild(this.el);
     var _self = this;
     function update() {
-      _self.x--;
+      _self.x-= 1;
       if (_self.x <= -_self.width) {
         _self.x += _self.number * _self.width;
       }
@@ -89,7 +89,8 @@ let clouds = {
 }
 
 class cloud {
-  constructor(speed, z) {
+  constructor(speed, z, startPos) {
+    this.startPos = (startPos != null) ? startPos : window.innerWidth
     this.speed = speed
     this.width = 512
     this.el = document.createElement("img");
@@ -97,7 +98,7 @@ class cloud {
     this.el.classList.add("cloud")
     this.el.src = src[Math.floor(Math.random() * src.length)]
     document.getElementById("clouds").appendChild(this.el);
-    this.x = window.innerWidth;
+    this.x = this.startPos;
     var _self = this;
     this.el.style.zIndex  = 11 - z
 
@@ -121,4 +122,14 @@ setInterval(() => {
     let speed = speeds[Math.floor(Math.random() * speeds.length)]
     new cloud(1 - ((speed - 1) * .25), speed)
   }
-}, 100);
+}, 70);
+
+function genStartClouds() {
+  var amt = 15
+  for (let i = 0; i < amt; i++) {
+    let speeds = [1, 1, 2, 2, 3, 3, 3]
+    let speed = speeds[Math.floor(Math.random() * speeds.length)]
+    new cloud(1 - ((speed - 1) * .25), speed, Math.random() * window.innerWidth)    
+  }
+}
+genStartClouds()

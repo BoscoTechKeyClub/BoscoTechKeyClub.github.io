@@ -55,18 +55,20 @@ canvas {
 .character {
     padding: 0;
     margin: 0;
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
     margin-top: 128px;
     position: relative;
+    height: 104px;
 }
 .character img {
-    position: relative;
+    position: absolute;
     margin: auto;
-    width: 256px;
+    width: 120px;
     image-rendering: pixelated;
     margin-bottom: -4px;
     z-index: 110;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #clouds {
