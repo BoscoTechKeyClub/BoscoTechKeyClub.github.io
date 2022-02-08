@@ -5,19 +5,172 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bosco Tech Key Club</title>
+        <link rel="stylesheet" href="styles/game.css">
         <link rel="stylesheet" href="styles/main.css">
         <script src="scripts/main.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700;800&display=swap"
+            rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     </head>
     <body>
+
+        <div id="header">
+            <div class="headerLogo">
+                <img src="./assets/Logo_KC_GN.png">
+                <h1>Bosco Tech<br>Key Club</h1>
+            </div>
+            <div class='bannerTiny'>
+                <img src="assets/bannerLeftTiny.png" class="bannerTiny-image">
+                <h1 class="bannerTiny-content">
+                    <a class="headerBtn active" href="#" headerWideBtn="Home">Home</a>
+                    <dot></dot>
+                    <a class="headerBtn" href="#" headerWideBtn="About">About</a>
+                    <dot></dot>
+                    <a class="headerBtn" href="#" headerWideBtn="Services">Services & Events</a>
+                    <dot></dot>
+                    <a class="headerBtn" href="#" headerWideBtn="Resources">Member Resources</a>
+                    <dot></dot>
+                    <a class="headerBtn" href="#" headerWideBtn="More">More</a>
+                </h1>
+                <img src="assets/bannerRightTiny.png" class="bannerTiny-image">
+            </div>
+            <div class="underHeaderBanner" id="underHeaderBanner">
+                <a class="headerBtn active" href="#">Gallery</a>
+                <dot></dot>
+                <a class="headerBtn" href="#">Announcements</a>
+                <dot></dot>
+                <a class="headerBtn" href="#">Links</a>
+                <dot></dot>
+                <a class="headerBtn" href="#">Contact Us</a>
+            </div>
+        </div>
+        <section>
+            <div class="content contentBanner">
+                <div class='bannerSmall bannerContentTitle'>
+                    <img src="assets/bannerLeftSmall.png"
+                        class="bannerSmall-image">
+                    <h1 class="bannerSmall-content">Club Pledge</h1>
+                    <img src="assets/bannerRightSmall.png"
+                        class="bannerSmall-image">
+                </div>
+                <h2>I pledge, on my honor, to uphold the Objects of Key Club
+                    International; to build my home, school, and community; to
+                    serve my nation and the world; and combat all forces which
+                    tend to undermine these institutions.</h2>
+            </div>
+        </section>
+        <section>
+            <div class="content contentColumns">
+                <div class="contentColumn contentBannerSmall">
+                    <div class='bannerTiny bannerContentTitleTiny'>
+                        <img src="assets/bannerLeftTiny.png"
+                            class="bannerTiny-image">
+                        <h1 class="bannerTiny-content">Upcoming Services</h1>
+                        <img src="assets/bannerRightTiny.png"
+                            class="bannerTiny-image">
+                    </div>
+                    <h2></h2>
+                </div>
+                <div class="contentColumn contentBannerSmall">
+                    <div class='bannerTiny bannerContentTitleTiny'>
+                        <img src="assets/bannerLeftTiny.png"
+                            class="bannerTiny-image">
+                        <h1 class="bannerTiny-content">Meetings & Events</h1>
+                        <img src="assets/bannerRightTiny.png"
+                            class="bannerTiny-image">
+                    </div>
+                    <h2></h2>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="content contentBanner contentNoBg">
+                <div class='bannerSmall bannerContentTitle'>
+                    <img src="assets/bannerLeftSmall.png"
+                        class="bannerSmall-image">
+                    <h1 class="bannerSmall-content">Announcements</h1>
+                    <img src="assets/bannerRightSmall.png"
+                        class="bannerSmall-image">
+                </div>
+                <div class="contentCarousel">
+                    <div class="carouselItem">
+                        <div class="carouselImg">
+                            <img src="./assets/Services/JAN_SERVICES_2022.png">
+                        </div>
+                        <h3 class="carouselTitle">January Services</h3>
+                    </div>
+                    <div class="carouselItem">
+                        <div class="carouselImg">
+                            <img src="./assets/Services/JAN_SERVICES_2022.png">
+                        </div>
+                        <h3 class="carouselTitle">January Services</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="footerGame">
+            <div id="beeParticles"></div>
+            <div id="bee">
+                <img src="assets/bee.gif">
+            </div>
             <div id="clouds"></div>
-            <div class="character"><img id="character" src="./assets/tile000.png"></div>
+            <div class="character"><img id="character"
+                    src="./assets/tile000.png"></div>
             <div class="container">
                 <div id="parent"></div>
                 <canvas id="a" width="100" height="50"></canvas>
             </div>
 
         </div>
-        <div class="footer"></div>
+        <div class="footer">
+            <div class="footerContent">
+                <div class="footerLeft">
+                    <div class="footerLeftColumn footerLeftLogos">
+                        <img src="./assets/Logo_KC_GN.png">
+                        <img src="./assets/CNHlogo.png">
+                    </div>
+                    <div class="footerLeftColumn">
+                        <h1>Bosco Tech <br> Key Club</h1>
+                        <div class="footerSocials">
+                            <a href="https://www.instagram.com/boscotechkeyclub/" target="_blank"><i class="ri-instagram-line"></i></a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="footerRight">
+                    <div class="footerRightColumn">
+                        <a>Home</a>
+                        <h2>About</h2>
+                        <a>What is Key Club?</a>
+                        <a>Officers & Advisors</a>
+                    </div>
+                    <div class="footerRightColumn">
+                        <h2>Services<br> & Events</h2>
+                        <a>Services</a>
+                        <a>DCM's</a>
+                        <a>District Events</a>
+                        <a>Calendar</a>
+                    </div>
+                    <div class="footerRightColumn">
+                        <h2>Member <br>Resources</h2>
+                        <a>Hours</a>
+                        <a>Documents</a>
+                        <a>Cheers</a>
+                    </div>
+                    <div class="footerRightColumn">
+                        <h2>More</h2>
+                        <a>Gallery</a>
+                        <a>Announcements</a>
+                        <a>Links</a>
+                        <a>Contact Us</a>
+                    </div>
+                </div>
+                <div class="footerFull"><a>Contact: @gmail.com</a><br><h1
+                        style="margin-top: 20px; font-size: 22px; font-style:
+                        oblique;">Caring - Our Way of Life</h1></div>
+            </div>
+        </div>
     </body>
 </html>

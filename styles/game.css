@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    image-rendering: pixelated;
+    font-family: 'EB Garamond', serif;
+}
+
+:root {
+    --rich-black-fogra-29: #060816ff;
+    --space-cadet: #171738ff;
+    --royal-blue-dark: #0a2d64ff;
+    --baby-blue: #9cdcffff;
+    --light-cyan: #d9f6ffff;
+    --lemon-yellow-crayola: #feffabff;
+    --white: #ffffffff;
+
+}
+
+body {
+    background: var(--baby-blue);
+}
+
+.image {
+    position: absolute;
+    height: 100vh;
+    background-size: 64px 512px;
+    image-rendering: pixelated;
+}
+
+#parent {
+    position: absolute;
+    width: 100%;
+    height: 5000px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 200px;
+}
+
+canvas {
+    position: absolute;
+    image-rendering: pixelated;
+    z-index: 2;
+    bottom: 0;
+}
+
+.character {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 128px;
+    position: relative;
+    height: 112px;
+}
+.character img {
+    position: absolute;
+    margin: auto;
+    width: 136px;
+    margin-bottom: -4px;
+    z-index: 110;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#clouds {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 256px;
+    z-index: 1;
+}
+
+.cloud {
+    position: absolute;
+    width: 512px;
+    image-rendering: pixelated;
+    z-index: 1;
+}
+
+#bee {
+    position: absolute;
+    width: 80px;
+    z-index: 100;
+    top: 50px;
+}
+
+#bee img {
+    width: 100%;
+}
+#beeParticles {
+    height: 64px;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    top: 50px;
+}
+
+.beeParticle {
+    background: #1F102A;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+}
+
+.footerGame {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.footerGame * {
+    
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
