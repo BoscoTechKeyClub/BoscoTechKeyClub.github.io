@@ -34,10 +34,14 @@ class segment {
     }
     requestAnimationFrame(update);
   }
+  clear() {
+    this.el.parentElement.removeChild(this.el)
+  }
 }
+var segments = [];
 
 for (let i = 0; i < width; i++) {
-  new segment(elWidth, width, parent, i);
+  segments.push(new segment(elWidth, width, parent, i));
 }
 
 var cnv = document.getElementById("a");
@@ -58,20 +62,27 @@ function gen() {
       if (random < chance) ctx.fillRect(s, i, 1, 1);
     }
   }
+  for(let i = 0; i < segments.length; i++) {
+    segments[i].clear()
+  }
+  segments= []
+  for (let i = 0; i < width; i++) {
+    segments.push(new segment(elWidth, width, parent, i));
+  }
 }
 window.onresize = gen
 
 gen();
 
 let frames = [
-  "./assets/tile000.png",
-  "./assets/tile001.png",
-  "./assets/tile002.png",
-  "./assets/tile003.png",
-  "./assets/tile004.png",
-  "./assets/tile005.png",
-  "./assets/tile006.png",
-  "./assets/tile007.png",
+  "../assets/tile000.png",
+  "../assets/tile001.png",
+  "../assets/tile002.png",
+  "../assets/tile003.png",
+  "../assets/tile004.png",
+  "../assets/tile005.png",
+  "../assets/tile006.png",
+  "../assets/tile007.png",
 ]
 let frame = 0
 function animateCharacter() {
@@ -87,19 +98,19 @@ setInterval(() => {
 
 let clouds = {
   1: [
-    "./assets/1cloud01.png",
-    "./assets/1cloud02.png",
-    "./assets/1cloud03.png",
+    "../assets/1cloud01.png",
+    "../assets/1cloud02.png",
+    "../assets/1cloud03.png",
   ],
   2: [
-    "./assets/2cloud01.png",
-    "./assets/2cloud02.png",
-    "./assets/2cloud03.png",
+    "../assets/2cloud01.png",
+    "../assets/2cloud02.png",
+    "../assets/2cloud03.png",
   ],
   3: [
-    "./assets/3cloud01.png",
-    "./assets/3cloud02.png",
-    "./assets/3cloud03.png",
+    "../assets/3cloud01.png",
+    "../assets/3cloud02.png",
+    "../assets/3cloud03.png",
   ]
 }
 
@@ -210,32 +221,31 @@ class beeParticle {
 var headerDropContent = {
   "Home": false,
   "About": {
-    "What is Key Club?": "",
-    "Officers & Advisors": "",
+    "What is Key Club?": "../about/what_is_key",
+    "Officers & Advisors": "../about/officers_and_advisors",
   },
   "Services": {
-    "Services": "",
-    "DCM's": "",
-    "District Events": "",
-    "Calendar": "",
+    "Services": "../services/",
+    "DCM's": "../services/dcm",
   },
   "Resources": {
-    "Hours": "",
-    "Document": "",
-    "Cheers": "",
+    "Hours": "../resources/hours",
+    "Documents": "../resources/documents",
+    "Cheers": "../resources/cheers",
   },
   "More": {
-    "Gallery": "",
-    "Announcements": "",
-    "Links": "",
-    "Contact Us": "",
+    "Gallery": "../gallery",
+    "Announcements": "../announcements",
+    "Links": "../links",
+    "Contact Us": "../contact",
   },
 }
 var uhb = document.getElementById("underHeaderBanner")
 
 function setupHeader() {
   document.querySelectorAll("[headerWideBtn]").forEach(element => {
-    element.addEventListener("mouseover", (e) => {
+    function act (e) {
+
       if(headerDropContent[e.target.attributes["headerwidebtn"].value]) {
         uhb.innerHTML = ""
         uhb.classList.add("bannerOpen")
@@ -245,12 +255,19 @@ function setupHeader() {
         })
         uhb.removeChild(uhb.childNodes[uhb.childNodes.length -1])
       }
-    })
-    element.addEventListener("mouseout", (e) => {
+    }
+    function off (e) {
       console.log('b')
       uhb.classList.remove("bannerOpen")
-    })
+    }
+    element.addEventListener("mouseover", act)
+    element.addEventListener("mouseout", off)
+    element.addEventListener("focus", act)
+    element.addEventListener("blur", off)
   });
 }
 
 setupHeader()
+
+
+document.getElementById('loader').classList.add("loader-hidden")

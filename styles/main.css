@@ -161,6 +161,7 @@ dot {
     opacity: 1;
 
 }
+
 .underHeaderBanner {
     position: absolute;
     background: #C97373;
@@ -180,6 +181,7 @@ dot {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--borderPixelSize)), calc(100% - var(--borderPixelSize)) calc(100% - var(--borderPixelSize)), calc(100% - var(--borderPixelSize)) 100%,
             var(--borderPixelSize) 100%, var(--borderPixelSize) calc(100% - var(--borderPixelSize)), 0 calc(100% - var(--borderPixelSize)));
 }
+
 .underHeaderBanner dot {
     display: inline-block;
     width: 4px;
@@ -187,6 +189,7 @@ dot {
     background: #F2AE99;
     margin: 0 8px;
 }
+
 .underHeaderBanner .headerBtn {
     background-image: linear-gradient(to right, #F2AE99, #F2AE99);
     background-size: 0% 2px;
@@ -196,7 +199,7 @@ dot {
 }
 
 .headerBtn:hover, .headerBtn.active {
-    background-size: 100% 2px ;
+    background-size: 100% 2px;
 
 }
 
@@ -310,6 +313,7 @@ section {
 :root {
     --contentBannerTopPadding: 50px;
     --contentBannerTinyTopPadding: 50px;
+    --contentBannerMinuteTopPadding: 50px;
     --contentColumnGap: 50px;
     --contentEdgeWidth: 33px;
     --borderPixelSize: 8px;
@@ -337,6 +341,10 @@ section {
     padding-top: var(--contentBannerTopPadding) !important;
 }
 
+.contentBannerSmallFull {
+    padding-top: var(--contentBannerMinuteTopPadding) !important;
+}
+
 .contentBanner.contentNoBg {
     padding-top: calc(var(--contentBannerTopPadding) + 16px) !important;
 }
@@ -345,6 +353,12 @@ section {
     text-align: center;
     font-size: 30px;
     color: var(--space-cadet);
+}
+.content h3 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--space-cadet);
+    line-height: 40px;
 }
 
 .bannerContentTitle {
@@ -415,4 +429,22 @@ section {
 .carouselTitle {
     font-size: 25px;
     text-align: center;
+}
+
+#loader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10000;
+    background: var(--royal-blue-dark);
+    top: 0;
+    left: 0;
+    transition: 0.3s opacity;
+    transition-delay: 300ms;
+    opacity: 1;
+}
+
+.loader-hidden {
+    pointer-events: none;
+    opacity: 0 !important;
 }
